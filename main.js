@@ -3,6 +3,7 @@ let nav = document.getElementById("nav-links")
 console.log(navLinks)
 
 window.addEventListener("resize", resize)
+window.addEventListener("load", resize)
 
 function resize(e){
     if(e.currentTarget.innerWidth < 860 ){
