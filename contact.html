@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Website2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-nav">
+        <h1>Austin Cripe</h1>
+        <div class="desktop-nav" id="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+        <div id="mobile-btn" onclick="openNav()"></div>
+    </div>
+    <div class="main-cont">
+        <div>
+            <form action="./submit.html" class="form">
+                <label for="name" >Name:</label>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Your Email" required>
+                <br>
+                <label for="message">Message:</label>
+                <br>
+                <textarea rows="4" cols="50" placeholder="Enter your message to the man."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

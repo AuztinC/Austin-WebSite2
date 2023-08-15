@@ -1,36 +1,166 @@
 *{
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
 body{
-    background-color: cadetblue;
-    height: 100vh;
+    background-repeat: no-repeat;
+    background: linear-gradient(to top, rgba(255,255,255, 0.5), rgba(96, 157, 159));
+    background-color: rgb(96, 157, 159);
+    height: 100%;
+    background-attachment: fixed;
     max-width: 1000px;
     margin: 0 auto;
 }
-#nav-cont{
-    background-color: darksalmon;
+.main-nav{
+    box-shadow: 0 0 12px -2px black;
+    margin: 0;
+    background-color: #e9967a;
     padding: 0 10px 0 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: static;
 }
-#a-cont a{
-    text-decoration: none;
-}
-#a-cont a:selected{
+.desktop-nav a{
     color: black;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.mobile-nav{
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e9967a;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
+.mobile-nav a{
+    /* position: relative; */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    transition: all 0.2;
+}
+.open-nav{
+    width: 100%;
+}
+#nav-links a{
+    line-height: 5px;
+    color: black;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+#nav-links a:hover, .mobile-nav a:hover{
+    color: rgb(255, 255, 255);
+}
+#mobile-btn{
+    display: none;
+    top: 25px;
+    right: 25px;
+    position: absolute;
+    background-color: pink;
+    width: 40px;
+    height: 40px;
+}
+.selected::after{
+    /* z-index: 100; */
+    content: "";
+    background: red;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0px;
+    position: absolute;
+    opacity: 1;
+    pointer-events: none;
+}
+.main-cont{
+    box-shadow: 0 0 12px -2px black;
+    background-color: rgb(96, 157, 159);
+    margin: 0;
+    height: 100%;
+    /* padding-top: 1px; */
+}
+.main-cont h1{
+    padding-top: 5px;
+    padding-bottom: 15px;
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
 }
 #hero-cont{
-    /* font-size: 1rem; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     text-shadow: 2px 2px 10px black;
     color: white;
     margin: 0px;
-    height: 60vw;
-    background-image: linear-gradient(to top, rgba(46, 0, 0, 0.5), rgba(77, 43, 20, 0.7)), url("https://pixabay.com/get/g9dba1603cb0b4d3a0660b5944af23ea9270c8470fbb5f6fae45c129417db5a2fd3b0eb5d20adfa5a7fc3fb18684822db11bfa28ad59b495ea0f5ae8448cfc6c7_1280.jpg");
+    height: 350px;
+    background-image: linear-gradient(to top, rgba(46, 0, 0, 0.5), rgba(77, 43, 20, 0.7)), url("https://pixabay.com/get/g126f59bd6061754a3a97ce298c16b0b89685849665fa347b0e0efd1cf30bddf93f498f20a733fc1c98ef112f4fcbc64a24fae43b1699e6be68d5542b3ab36e38_1280.jpg");
     background-repeat:no-repeat;
 }
 #hero-cont h3{
     font-size: 2rem;
+}
+#hero-cont h3, #hero-cont p {
+    padding-left: 25px;
+    width: 30%;
+}
+.section {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+}
+.section img{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.section p{
+    width: 300px;
+}
+hr{
+    margin: 25px;
+}
+.port-sec{
+    border: 2px solid black;
+}
+.form{
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.form label{
+    padding: 15px;
+    user-select: none;
+}
+.form input:focus{
+    border: 2px solid red;
+}
+@media screen and (max-width: 860px){
+    #mobile-btn{
+        display: block;
+    }
+    .img-right{
+        display: none;
+    }
+    .section{
+        display: flex;
+        justify-content: space-around;
+    }
 }
