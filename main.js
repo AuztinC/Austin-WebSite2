@@ -1,6 +1,5 @@
 let navLinks = document.querySelectorAll(".main-nav a");
 let nav = document.getElementById("nav-links")
-console.log(navLinks)
 
 window.addEventListener("resize", resize)
 window.addEventListener("load", resize)
@@ -16,10 +15,16 @@ function resize(e){
 navLinks.forEach((item, i) => {
     if(item.href == location.href){
         item.className += "selected";
+        console.log(nav)
+        if(item.href.includes("index.html")){
+            let mainCont = document.querySelector(".main-cont");
+            mainCont.style.justifyContent = "start";
+            // console.log(mainCont.style.justifyContent)
+        }
     } else{
         item.className = "";
     }
-    console.log(item)
+    // console.log(item)
 })
 
 
